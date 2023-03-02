@@ -1,15 +1,21 @@
 import React from "react";
-import "./style.css";
-import Header from './Header.js'
-import Footer from './Footer.js'
-import Content from './Content.js'
+import Header from "./Header";
+import Content from "./Content";
+import Footer from "./Footer";
 
-export default function App() {
+const App = () => {
+  const itemsRem = [
+    { id: 1, item: "Item1", checked: true },
+    { id: 2, item: "Item2", checked: false },
+    { id: 3, item: "Item3", checked: false },
+  ];
   return (
-    <div className='container'>
-      <Header/>
-      <Content/>
-      <Footer/>
+    <div className="mycontainer">
+      <Header />
+      <Content itemsRem={itemsRem} />
+      <Footer />
     </div>
   );
-}
+};
+
+export default App;

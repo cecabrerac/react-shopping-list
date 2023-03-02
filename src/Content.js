@@ -1,14 +1,20 @@
 import React from 'react';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-const Content = () => {
+const Content = ({ itemsRem }) => {
   return (
     <main>
+      Items List:
       <ul>
-        <h3>Item 1</h3>
-        <h3>Item 2</h3>
-        <h3>Item 3</h3>
+        {itemsRem.map((item) => (
+          <li className="item">
+            <input type="checkbox" name="check" id="check" />
+            id: {item.id} {item.item}
+          </li>
+        ))}
       </ul>
     </main>
   );
 };
+
 export default Content;
