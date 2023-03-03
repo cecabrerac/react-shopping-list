@@ -5,12 +5,12 @@ import Footer from "./Footer";
 
 const App = () => {
   const itemsRem = [
-    { id: 1, item: "Item1", checked: true },
-    { id: 2, item: "Item2", checked: false },
-    { id: 3, item: "Item3", checked: false },
+    { id: 1, item: "Cheese", checked: true },
+    { id: 2, item: "Milk", checked: false },
+    { id: 3, item: "Rice", checked: false },
   ];
   return (
-    <div className="mycontainer">
+    <div className="App">
       <Header />
       <Content itemsRem={itemsRem} />
       <Footer />
@@ -19,3 +19,4 @@ const App = () => {
 };
 
 export default App;
+
