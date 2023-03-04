@@ -55,20 +55,23 @@ ul {
 
 .item input[type="checkbox"] {
 width: 48px;
+min-width: 48px;
 height: 48px;
+min-height: 48px;
 cursor: pointer;
-margin-right: 1rem;
+margin-right: 2rem;
 margin: 0.2rem;
 }
 
-.item p {
+.item label {
   flex-grow: 1;
 }
 
 .item svg {
   width: 48px;
   min-width: 48px;
-  height: 36px;
+  height: 48px;
+  min-height: 48px;
   font-size: 1rem;
   color: black;
   cursor: pointer;
@@ -79,4 +82,9 @@ margin: 0.2rem;
 .item svg:hover {
   color: red;
   outline: none;
+}
+
+button {
+  padding: 0.5rem;
+  font-size: large;
 }

@@ -2,25 +2,24 @@ import React from "react";
 import { BsTrash } from "react-icons/bs";
 import { useState } from "react";
 
-const Content = ({ itemsRem }) => {
-  const [variable, setVariable] = useState("");
-  const handleButton = (name) => {
-    setVariable(name + ": You have clicked the button");
-  };
-
+const Content = () => {
+  const [items, setItems] = useState([
+    { id: 1, item: "Cheese", checked: true },
+    { id: 2, item: "Milk", checked: false },
+    { id: 3, item: "Rice", checked: false },
+  ]);
+  
   return (
     <main>
       <ul>
-        {itemsRem.map((item) => (
+        {items.map((item) => (
           <li className="item">
-            <input type="checkbox" name="check" id="check" />
-            <p> {item.item}</p>
+            <input type="checkbox" name="check" id="check" checked={item.checked}/>
+            <label> {item.item}</label>
             <BsTrash role="button" />
           </li>
         ))}
       </ul>
-      <button onClick={() => handleButton("Carlos")}>Click me</button>
-      <p>{variable}</p>
     </main>
   );
 };
