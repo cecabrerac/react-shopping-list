@@ -84,7 +84,29 @@ margin: 0.2rem;
   outline: none;
 }
 
-button {
-  padding: 0.5rem;
-  font-size: large;
+.addItem {
+  margin: 0.2rem;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 36px;
+}
+
+.addItem button {
+  padding: 0rem 0.2rem;
+  font-size: 48px;
+}
+
+.addItem input {
+  font-size: 36px;
+  width: 100%;
+}
+
+.searchItem {
+  margin: 0.2rem;
+}
+
+.searchItem input {
+  width: 100%;
+  height: 48px;
+  font-size: 36px;
 }
