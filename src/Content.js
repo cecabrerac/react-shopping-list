@@ -25,6 +25,15 @@ const Content = () => {
     localStorage.setItem("shoopinglist", JSON.stringify(itemsList));
   };
 
+  const handleAddItem = (text) => {
+    if (text = '') return;
+    const id = items ? items[items.length-1] +1 : 1;
+    const newItem = {id: id, checked: false, item: text};
+    const itemsList = [...items, newItem];
+    setItems(itemsList);
+    localStorage.setItem("shoopinglist", JSON.stringify(itemsList));
+  }
+
   const handleSearch = (text) => {
     console.log(text);
     // const itemsList = items.map((item) => item.item.contains(text));
@@ -35,7 +44,7 @@ const Content = () => {
     <main>
       <div className="addItem">
         <input type="text" placeholder="Add Item" />
-        <button>+</button>
+        <button onClick={(e)=>handleAddItem(e.target.innerText)}>+</button>
       </div>
       <div className="searchItem">
         <input
