@@ -16,6 +16,19 @@ const Content = () => {
       id === item.id ? { ...item, checked: !item.checked } : item,
     );
     setItems(itemsList);
+    localStorage.setItem("shoopinglist", JSON.stringify(itemsList));
+  };
+
+  const handleDelete = (id) => {
+    const itemsList = items.filter((item) => item.id !== id);
+    setItems(itemsList);
+    localStorage.setItem("shoopinglist", JSON.stringify(itemsList));
+  };
+
+  const handleSearch = (text) => {
+    console.log(text);
+    // const itemsList = items.map((item) => item.item.contains(text));
+    // setItems(itemsList);
   };
 
   return (
@@ -25,7 +38,11 @@ const Content = () => {
         <button>+</button>
       </div>
       <div className="searchItem">
-        <input type="text" placeholder="Search Item" />
+        <input
+          type="text"
+          placeholder="Search Item"
+          onChange={(e) => handleSearch(e.target.innerText)}
+        />
       </div>
       <ul>
         {items.map((item) => (
@@ -38,7 +55,7 @@ const Content = () => {
               onChange={() => handleCheck(item.id)}
             />
             <label> {item.item}</label>
-            <BsTrash role="button" />
+            <BsTrash role="button" onClick={() => handleDelete(item.id)} />
           </li>
         ))}
       </ul>
