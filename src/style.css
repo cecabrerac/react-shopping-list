@@ -67,6 +67,10 @@ margin: 0.2rem;
   flex-grow: 1;
 }
 
+.item label:hover {
+  text-decoration: underline;
+}
+
 .item svg {
   width: 48px;
   min-width: 48px;
