@@ -3,9 +3,9 @@ import { BsTrash } from "react-icons/bs";
 import { useState } from "react";
 
 const Content = () => {
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist'))
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')) || null )
     
-  );
+  
   const [newItem, setNewItem] = useState("");
   const [search, setSearch] = useState("");
 
@@ -26,7 +26,7 @@ const Content = () => {
   const handleAddItem = (e) => {
     //e.preventDefault();
     if (!newItem) return;
-    const id = items ? items[items.length - 1].id + 1 : 1;
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
     const myNewItem = { id: id, checked: false, item: newItem };
     const itemsList = [...items, myNewItem];
     setItems(itemsList);
