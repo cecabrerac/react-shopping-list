@@ -7,13 +7,11 @@ const Content = ({ items, setItems, search, setSearch }) => {
       id === item.id ? { ...item, checked: !item.checked } : item,
     );
     setItems(itemsList);
-    localStorage.setItem("shoppinglist", JSON.stringify(itemsList));
   };
 
   const handleDelete = (id) => {
     const itemsList = items.filter((item) => item.id !== id);
     setItems(itemsList);
-    localStorage.setItem("shoppinglist", JSON.stringify(itemsList));
   };
 
   return (
